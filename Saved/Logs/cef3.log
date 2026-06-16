@@ -1,26 +1,11 @@
-[18248:18896:0616/091726.040:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
-[18248:5540:0616/091726.478:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
-[18248:18896:0616/091726.695:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
-[15504:27420:0616/091735.998:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-E901B2C450D9C29A2F5AE417AD24AFD2 will be ignored
-[18248:18600:0616/091736.773:WARNING:browser_info.cc(345)] Returning a speculative frame for [8,9]
-[18248:18896:0616/091736.915:WARNING:browser_info.cc(345)] Returning a speculative frame for [10,5]
-[18248:18896:0616/091736.916:WARNING:browser_info.cc(345)] Returning a speculative frame for [10,5]
-[18248:18896:0616/091736.917:WARNING:browser_info.cc(345)] Returning a speculative frame for [10,5]
-[18248:18896:0616/091736.917:WARNING:browser_info.cc(345)] Returning a speculative frame for [10,5]
-[18248:18600:0616/091736.984:WARNING:browser_info.cc(345)] Returning a speculative frame for [10,5]
-[31152:16120:0616/091747.557:WARNING:codec.cc(525)] Explicitly added H264 constrained baseline to list of supported formats.
-[31152:16120:0616/091749.565:WARNING:codec.cc(525)] Explicitly added H264 constrained baseline to list of supported formats.
-[31152:12432:0616/091749.628:WARNING:codec.cc(525)] Explicitly added H264 constrained baseline to list of supported formats.
-[31152:12432:0616/091749.630:WARNING:codec.cc(525)] Explicitly added H264 constrained baseline to list of supported formats.
-[31152:12432:0616/091749.633:WARNING:codec.cc(525)] Explicitly added H264 constrained baseline to list of supported formats.
-[17584:28448:0616/091749.719:WARNING:host_resolver_dns_task.cc(863)] Address list empty after RFC3484 sort
-[17584:28448:0616/091749.734:WARNING:host_resolver_dns_task.cc(863)] Address list empty after RFC3484 sort
-[17584:28448:0616/091749.749:ERROR:socket_manager.cc(147)] Failed to resolve address for stun.cloudflare.com., errorcode: -105
-[17584:28448:0616/091749.750:ERROR:socket_manager.cc(147)] Failed to resolve address for stun.cloudflare.com., errorcode: -105
-[17584:28448:0616/091749.750:ERROR:socket_manager.cc(147)] Failed to resolve address for stun.cloudflare.com., errorcode: -105
-[31152:12432:0616/091749.751:WARNING:stun_port.cc(442)] Port[fe4c00:0:1:0:host:Net[any:0:0:0:x:x:x:x:x/0:Wildcard:id=0]]: StunPort: stun host lookup received error -1
-[31152:12432:0616/091749.751:WARNING:stun_port.cc(442)] Port[2360c00:1:1:0:host:Net[any:0:0:0:x:x:x:x:x/0:Wildcard:id=0]]: StunPort: stun host lookup received error -1
-[31152:12432:0616/091749.751:WARNING:stun_port.cc(442)] Port[48ae400:2:1:0:host:Net[any:0:0:0:x:x:x:x:x/0:Wildcard:id=0]]: StunPort: stun host lookup received error -1
-[22116:5420:0616/092000.321:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 6-DA5037CB815C22C5653FF27B625038E5 will be ignored
-[24108:11232:0616/092003.511:ERROR:shared_image_manager.cc(224)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
-[18248:18896:0616/094223.272:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+[428:16196:0616/112647.574:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[428:17672:0616/112647.755:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
+[428:16196:0616/112647.862:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[428:17672:0616/112652.529:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\smnkm\unreal\Digital-Twin-Project\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\smnkm\unreal\Digital-Twin-Project\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[428:17672:0616/112652.531:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\smnkm\unreal\Digital-Twin-Project\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\smnkm\unreal\Digital-Twin-Project\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[428:17672:0616/112652.533:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\smnkm\unreal\Digital-Twin-Project\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\smnkm\unreal\Digital-Twin-Project\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[428:17672:0616/112652.534:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\smnkm\unreal\Digital-Twin-Project\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\smnkm\unreal\Digital-Twin-Project\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[428:18176:0616/112652.998:WARNING:value_store_frontend.cc(47)] Reading ahfgeienlihckogmohjhadlkjgocpleb.alarms from  failed: IO error: .../MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[428:18176:0616/112653.000:WARNING:value_store_frontend.cc(47)] Reading mhjfbmdgcfjbbpaeojofohoefgiehjai.alarms from  failed: IO error: .../MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[11212:2776:0616/112653.678:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-0F24F617639901BCAAACBF707A402C07 will be ignored
+[13476:1788:0616/142937.792:ERROR:shared_image_manager.cc(224)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.

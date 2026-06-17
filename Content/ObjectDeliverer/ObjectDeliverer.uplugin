@@ -1,0 +1,47 @@
+{
+	"FileVersion": 3,
+	"Version": 190,
+	"VersionName": "1.9.0",
+	"FriendlyName": "ObjectDeliverer",
+	"Description": "ObjectDeliverer is a data transmission / reception library for Unreal Engine (C ++, Blueprint).",
+	"Category": "Programming",
+	"CreatedBy": "ayumax",
+	"CreatedByURL": "https://ayumaxsoft.com",
+	"DocsURL": "https://ayumaxsoft.com/objectdeliverer/",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/c2612cff517c48bca7dd080299d97ca8",
+	"SupportURL": "https://ayumaxsoft.com/support/",
+	"EngineVersion": "5.7.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "ObjectDeliverer",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Android",
+				"Win64",
+				"Mac",
+				"IOS",
+				"Linux"
+			]
+		},
+		{
+			"Name": "ObjectDelivererEditor",
+			"Type": "EditorNoCommandlet",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "ObjectDelivererTests",
+			"Type": "DeveloperTool",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Android",
+				"Win64",
+				"Mac",
+				"IOS",
+				"Linux"
+			]
+		}
+	]
+}

@@ -1,7 +1,12 @@
-﻿Binaries/
-Build/
+# Unreal generated/cache folders
+Binaries/
 DerivedDataCache/
 Intermediate/
 Saved/
 .vs/
+
+# Optional local files
 *.sln
+*.VC.db
+*.opensdf
+*.suo

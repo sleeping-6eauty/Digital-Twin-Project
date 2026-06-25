@@ -1,33 +1,12 @@
-# Unreal Engine 자동 생성 파일
+# Unreal generated/cache folders
 Binaries/
-Intermediate/
 DerivedDataCache/
+Intermediate/
 Saved/
 .vs/
 
-# Visual Studio / 사용자별 설정
+# Optional local files
 *.sln
-*.suo
-*.user
-*.userprefs
 *.VC.db
-*.VC.opendb
 *.opensdf
-*.sdf
-
-# IDE
-.vscode/
-.idea/
-
-# 빌드 로그 / 임시 파일
-*.log
-*.tmp
-*.bak
-
-# 플러그인 자동 생성 파일
-Plugins/*/Binaries/
-Plugins/*/Intermediate/
-
-# MQTT 접속 정보가 별도 파일에 있는 경우
-Config/MQTTSecrets.ini
-Config/DefaultMQTTSecrets.ini
+*.suo

@@ -3,6 +3,13 @@
 	"EngineAssociation": "5.7",
 	"Category": "",
 	"Description": "",
+	"Modules": [
+		{
+			"Name": "DtProject",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
 	"Plugins": [
 		{
 			"Name": "ModelingToolsEditorMode",
@@ -10,10 +17,6 @@
 			"TargetAllowList": [
 				"Editor"
 			]
-		},
-		{
-			"Name": "DataCharts",
-			"Enabled": true
 		}
 	]
 }

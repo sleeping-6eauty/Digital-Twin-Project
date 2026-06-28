@@ -22,19 +22,39 @@ void UProductionSubsystem::Deinitialize()
 
 void UProductionSubsystem::Connect()
 {
-    FString WsUrl = BackendUrl.Replace(TEXT("http://"), TEXT("ws://"))
-                              .Replace(TEXT("https://"), TEXT("wss://"))
-                    + TEXT("/ws/ue5");
+    if (WebSocket.IsValid())
+    {
+        WebSocket->Close();
+        WebSocket.Reset();
+    }
 
-    WebSocket = FWebSocketsModule::Get().CreateWebSocket(WsUrl, TEXT("ws"));
+    const FString WsUrl = BackendWebSocketUrl;
+
+    UE_LOG(
+        LogTemp,
+        Warning,
+        TEXT("[Production] WebSocket connecting: %s"),
+        *WsUrl
+    );
+
+    WebSocket = FWebSocketsModule::Get().CreateWebSocket(WsUrl);
+
     WebSocket->OnMessage().AddUObject(this, &UProductionSubsystem::OnMessage);
     WebSocket->OnClosed().AddUObject(this, &UProductionSubsystem::OnClosed);
     WebSocket->OnConnectionError().AddUObject(this, &UProductionSubsystem::OnError);
-    WebSocket->OnConnected().AddLambda([this]()
-    {
-        UE_LOG(LogTemp, Log, TEXT("[Production] connected"));
-        OnConnectionChanged.Broadcast(true, TEXT("connected"));
-    });
+
+    WebSocket->OnConnected().AddLambda([this, WsUrl]()
+        {
+            UE_LOG(
+                LogTemp,
+                Warning,
+                TEXT("[Production] WebSocket connected: %s"),
+                *WsUrl
+            );
+
+            OnConnectionChanged.Broadcast(true, TEXT("Connected"));
+        });
+
     WebSocket->Connect();
 }
 
@@ -117,21 +137,65 @@ void UProductionSubsystem::OnMessage(const FString& Message)
     }
 }
 
-void UProductionSubsystem::OnClosed(int32 Code, const FString& Reason, bool bWasClean)
+void UProductionSubsystem::OnClosed(
+    int32 Code,
+    const FString& Reason,
+    bool bWasClean
+)
 {
-    UE_LOG(LogTemp, Warning, TEXT("[Production] disconnected: %s"), *Reason);
+    UE_LOG(
+        LogTemp,
+        Warning,
+        TEXT("[Production] WebSocket disconnected | Code=%d | Clean=%s | Reason=%s"),
+        Code,
+        bWasClean ? TEXT("true") : TEXT("false"),
+        *Reason
+    );
+
     OnConnectionChanged.Broadcast(false, Reason);
 
     FTimerHandle Handle;
-    GetGameInstance()->GetTimerManager().SetTimer(Handle, [this]()
-    {
-        if (!WebSocket.IsValid() || !WebSocket->IsConnected())
-            Connect();
-    }, 3.f, false);
+    GetGameInstance()->GetTimerManager().SetTimer(
+        Handle,
+        [this]()
+        {
+            if (!WebSocket.IsValid() || !WebSocket->IsConnected())
+            {
+                Connect();
+            }
+        },
+        3.0f,
+        false
+    );
 }
 
 void UProductionSubsystem::OnError(const FString& Error)
 {
-    UE_LOG(LogTemp, Error, TEXT("[Production] error: %s"), *Error);
-    OnConnectionChanged.Broadcast(false, Error);
+    const FString Detail = Error.IsEmpty()
+        ? TEXT("WebSocket connection failed without detail")
+        : Error;
+
+    UE_LOG(
+        LogTemp,
+        Error,
+        TEXT("[Production] WebSocket connection failed | Url=%s | Error=%s"),
+        *BackendWebSocketUrl,
+        *Detail
+    );
+
+    OnConnectionChanged.Broadcast(false, Detail);
+
+    FTimerHandle Handle;
+    GetGameInstance()->GetTimerManager().SetTimer(
+        Handle,
+        [this]()
+        {
+            if (!WebSocket.IsValid() || !WebSocket->IsConnected())
+            {
+                Connect();
+            }
+        },
+        3.0f,
+        false
+    );
 }

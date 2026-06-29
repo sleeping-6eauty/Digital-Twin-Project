@@ -36,3 +36,6 @@ Config/DefaultMQTTSecrets.ini
 # 임시적으로 제외할 플러그인
 Plugins/FF_MQTT_Sync
 Source/
+.vsconfig
+DtProject.code-workspace
+UpgradeLog.htm

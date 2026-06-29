@@ -79,7 +79,7 @@ public:
     UPROPERTY(BlueprintAssignable, Category = "Production")
     FOnBodyCompleted OnBodyCompleted;
 
-    // 백엔드 연결 상태 변경 시 호출
+    // 비전 검사 집계 업데이트 수신 시 호출
     UPROPERTY(BlueprintAssignable, Category = "Production")
     FOnVisionSummaryUpdated OnVisionSummaryUpdated;
 
@@ -87,7 +87,7 @@ public:
     FOnConnectionChanged OnConnectionChanged;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Production")
-    FString BackendUrl = TEXT("http://127.0.0.1:8000");
+    FString BackendWebSocketUrl = TEXT("ws://127.0.0.1:8000/ws/ue5");
 
 private:
     TSharedPtr<IWebSocket> WebSocket;
